@@ -6,7 +6,7 @@ from ml.data import process_data
 from ml.model import train_model, compute_model_metrics, inference
 
 def evaluate_model_on_slices(model, original_data, encoded_data, y, categorical_features):
-    with open('model/slice_output.txt', 'a') as f:
+    with open('starter/model/slice_output.txt', 'a') as f:
         for feature in categorical_features:
             unique_values = original_data[feature].unique()
             for value in unique_values:
@@ -28,7 +28,7 @@ def evaluate_model_on_slices(model, original_data, encoded_data, y, categorical_
                 f.write(f"Precision: {precision}, Recall: {recall}, F1 Score: {fbeta}\n\n")
 
 # Load and preprocess data
-data = pd.read_csv("data/census.csv")
+data = pd.read_csv("starter/data/census.csv")
 
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
@@ -62,7 +62,7 @@ precision, recall, fbeta = compute_model_metrics(y_test, preds)
 
 # Print out the metrics
 print(f"Precision: {precision}, Recall: {recall}, F1-Score: {fbeta}")
-with open('model/slice_output.txt', 'w') as f:
+with open('starter/model/slice_output.txt', 'w') as f:
     f.write(f"Overall Metrics:\n")
     f.write(f"Precision: {precision}, Recall: {recall}, F1 Score: {fbeta}\n\n")
 
@@ -70,6 +70,6 @@ with open('model/slice_output.txt', 'w') as f:
 evaluate_model_on_slices(model, test, X_test, y_test, cat_features)
 
 # Save the model and encoders
-joblib.dump(model, "model/model.pkl")
-joblib.dump(encoder, "model/encoder.pkl")
-joblib.dump(lb, "model/lb.pkl")
+joblib.dump(model, "starter/model/model.pkl")
+joblib.dump(encoder, "starter/model/encoder.pkl")
+joblib.dump(lb, "starter/model/lb.pkl")

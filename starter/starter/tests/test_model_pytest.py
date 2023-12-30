@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 @pytest.fixture(scope="module")
 def dataset():
     # Load the dataset
-    data = pd.read_csv("starter/data/census.csv")  # Adjust the path if necessary
+    data = pd.read_csv("starter/data/census.csv")
 
     # Preprocess the dataset
     # Replace these with the actual categorical features and label from your dataset
