@@ -36,7 +36,7 @@ async def root():
 async def predict(input_data: InferenceInput):
     try:
         # Process input data
-        data_dict = input_data.model_dump(by_alias=True)
+        data_dict = input_data.dict(by_alias=True)
         df = pd.DataFrame([data_dict])
         X, _, _, _ = process_data(
             df,
