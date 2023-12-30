@@ -50,16 +50,14 @@ async def predict(input_data: InferenceInput):
                 "sex",
                 "native-country",
             ],
-            label=None,  # No label needed for inference
-            training=False,  # Indicate it's not for training
-            encoder=encoder,  # Use loaded encoder
-            lb=lb,  # Use loaded label binarizer
+            label=None,  
+            training=False,  
+            encoder=encoder,  
+            lb=lb,  
         )
 
         # Make predictions
         preds = inference(model, X)
-
-        # Assuming binary classification, convert prediction to label
         pred_label = lb.inverse_transform(preds)[0]
 
         return {"prediction": pred_label}

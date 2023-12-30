@@ -15,8 +15,6 @@ def make_api_request(url, data):
 # Replace this with the URL of your Render app and appropriate endpoint
 api_url = "https://application-platform.onrender.com/predict"
 
-# Replace this with the data you want to send to your API
-# The structure of this data depends on your specific model's requirements
 data = {
         "age": 58,
         "workclass": "Self-emp-not-inc",

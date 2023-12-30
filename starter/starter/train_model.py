@@ -30,7 +30,6 @@ def evaluate_model_on_slices(model, original_data, encoded_data, y, categorical_
 # Load and preprocess data
 data = pd.read_csv("starter/data/census.csv")
 
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
 train, test = train_test_split(data, test_size=0.20)
 test = test.reset_index(drop=True)
 

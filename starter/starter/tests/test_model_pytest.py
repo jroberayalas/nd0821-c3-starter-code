@@ -11,7 +11,6 @@ def dataset():
     data = pd.read_csv("starter/data/census.csv")
 
     # Preprocess the dataset
-    # Replace these with the actual categorical features and label from your dataset
     categorical_features = [
         "workclass",
         "education",
