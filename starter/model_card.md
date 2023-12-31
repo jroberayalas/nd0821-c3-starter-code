@@ -15,7 +15,7 @@ The model was trained on a dataset derived from census data. This dataset includ
 
 ## Evaluation Data
 
-The model was evaluated on a split of the original dataset, ensuring a fair representation of the overall population and diversity in the dataset.
+The model was evaluated on a 20% split of the original dataset, ensuring a fair representation of the overall population and diversity in the dataset. The remaining 80% of the original dataset was used to train the model.
 
 ## Metrics
 
